@@ -64,15 +64,23 @@ describe('withLifecycles', () => {
   });
 
   it('when initial state is given with custom mapStateToProps', () => {
+    let mapState;
+    let mapProps;
     const Wrapped = withLifecycles({
       getInitialState: () => ({ count: 0 }),
-      mapStateToProps: state => ({ count: state.count }),
+      mapStateToProps: (state, props) => {
+        mapState = state;
+        mapProps = props;
+        return { count: state.count };
+      },
     })(Counter);
 
-    render(<Wrapped />, node, () => {
+    render(<Wrapped foo="bar" />, node, () => {
       expect(node.innerHTML).toContain('Current count: 0');
 
       expect(componentProps).toEqual({ count: 0 });
+      expect(mapState).toEqual({ count: 0 });
+      expect(mapProps).toEqual({ foo: 'bar' });
     });
   });
 

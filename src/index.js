@@ -46,7 +46,7 @@ export default function withLifecyles(lifecycles = {}) {
       }
 
       render() {
-        const componentProps = mapStateToProps(this.state);
+        const componentProps = mapStateToProps(this.state, this.props);
 
         nonReactFunctions.forEach(
           fnName =>
@@ -70,6 +70,8 @@ export default function withLifecyles(lifecycles = {}) {
       }
       LifecycleComponent.prototype[methodName] = methodValue;
     });
+
+    LifecycleComponent.displayName = `withLifecycles(${Component.name}`;
 
     return LifecycleComponent;
   };
