@@ -16,7 +16,8 @@
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "release": "standard-version"
   },
   "dependencies": {
     "lodash.flatten": "^4.4.0"
@@ -27,7 +28,8 @@
   "devDependencies": {
     "nwb": "0.22.x",
     "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react-dom": "^16.4.0",
+    "standard-version": "^4.4.0"
   },
   "author": "Harry Wolff <hello@hswolff.com>",
   "license": "Apache-2.0",
