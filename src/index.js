@@ -71,6 +71,14 @@ export default function withLifecyles(lifecycles = {}) {
       LifecycleComponent.prototype[methodName] = methodValue;
     });
 
+    lifecycleWhitelist.static.forEach(methodName => {
+      const methodValue = lifecycles[methodName];
+      if (!methodValue) {
+        return;
+      }
+      LifecycleComponent[methodName] = methodValue;
+    });
+
     LifecycleComponent.displayName = `withLifecycles(${Component.name}`;
 
     return LifecycleComponent;

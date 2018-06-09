@@ -48,6 +48,20 @@ describe('withLifecycles', () => {
     });
   });
 
+  it('when a static lifecycle method is given', () => {
+    let called = false;
+    const getDerivedStateFromProps = () => (called = true);
+    const Wrapped = withLifecycles({
+      getDerivedStateFromProps,
+    })(Counter);
+
+    expect(Wrapped.getDerivedStateFromProps).toEqual(getDerivedStateFromProps);
+    render(<Wrapped />, node, () => {
+      expect(node.innerHTML).toContain('Current count: ');
+      expect(called).toEqual(true);
+    });
+  });
+
   it('when initial state is given', () => {
     const Wrapped = withLifecycles({
       getInitialState: () => ({ count: 0 }),
