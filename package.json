@@ -1,7 +1,7 @@
 {
   "name": "with-lifecycles",
   "version": "1.0.0",
-  "description": "with-lifecycles React component",
+  "description": "An easy way to turn stateless functional components into class components with state and lifecycles.",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -28,11 +28,12 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
   },
-  "author": "",
-  "homepage": "",
-  "license": "MIT",
-  "repository": "",
+  "author": "Harry Wolff <hello@hswolff.com>",
+  "license": "Apache-2.0",
   "keywords": [
-    "react-component"
+    "react-component",
+    "react",
+    "lifecycles",
+    "hoc"
   ]
 }
