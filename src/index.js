@@ -17,7 +17,7 @@ const lifecycleWhitelist = {
     'componentDidCatch',
   ],
   static: ['getDerivedStateFromProps'],
-  other: ['getInitialState'],
+  other: ['getInitialState', 'mapStateToProps'],
 };
 
 const allReactFunctions = flatten(Object.values(lifecycleWhitelist));
