@@ -1,6 +1,6 @@
 {
   "name": "with-lifecycles",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An easy way to turn stateless functional components into class components with state and lifecycles.",
   "main": "lib/index.js",
   "module": "es/index.js",
