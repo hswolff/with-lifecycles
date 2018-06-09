@@ -42,6 +42,10 @@ const CounterWithLifecycles = withLifecycles({
 
 Voila! 🎉 Your SFC now has all the super powers of a React Class component.
 
+Play with a live example on Codesandbox.
+
+[![Edit withLifecycles](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/8nzwmv7x92)
+
 ## Documentation
 
 `withLifecycles` is a [Higher-Order Component](https://reactjs.org/docs/higher-order-components.html) which takes in an object which supports every known React Class method, including any additional methods you want to be included in the returned class (such as event handlers), and returns a function which takes in the component you want to wrap.
